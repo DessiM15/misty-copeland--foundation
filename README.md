@@ -46,9 +46,8 @@ figures, and links. No component edits needed for routine content changes.
 
 These are marked with `TODO(client)` in the code:
 
-1. **Donation platform** (`lib/content.ts` → `DONATE_URL`): connect the Foundation's real
-   processor (Givebutter / Donorbox / Classy). The donate widget UI is built and ready — this
-   is a one-line change plus, optionally, an embedded checkout.
+1. ✅ **Donation platform** — connected to the Foundation's live **NeonCRM** form. All giving CTAs
+   open `mistycopelandfoundation.app.neoncrm.com/forms/donate` (set in `lib/content.ts` → `DONATE_URL`).
 2. **Campaign total** (`CAMPAIGN.raised`): set the live "Celebrating Misty" running total.
 3. **Impact numbers** (`STATS`): confirm the real figures (the "children reached" tile is a
    placeholder).
