@@ -1,4 +1,5 @@
 import Hero from "@/components/Hero";
+import CampaignBar from "@/components/CampaignBar";
 import Mission from "@/components/Mission";
 import InstagramGallery from "@/components/InstagramGallery";
 import ImpactStats from "@/components/ImpactStats";
@@ -13,6 +14,7 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <CampaignBar />
       <Mission />
       <InstagramGallery />
       <ImpactStats />

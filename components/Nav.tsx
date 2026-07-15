@@ -98,6 +98,12 @@ export default function Nav() {
   const solid = scrolled || !isHome;
   const dark = !solid && !open;
 
+  // Clicking the logo returns to the top (hero), even when already on home.
+  const toTop = () => {
+    setOpen(false);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
@@ -112,7 +118,7 @@ export default function Nav() {
             solid ? "pointer-events-none opacity-0" : "opacity-100"
           }`}
         >
-          <Link href="/" aria-label="The Misty Copeland Foundation — home">
+          <Link href="/" aria-label="The Misty Copeland Foundation — home" onClick={toTop}>
             <Image
               src="/logo/logo-horizontal-white.png"
               alt="The Misty Copeland Foundation"
@@ -141,7 +147,7 @@ export default function Nav() {
               <NavLink key={item.href} item={item} dark={false} />
             ))}
           </div>
-          <Link href="/" aria-label="The Misty Copeland Foundation — home" className="justify-self-center">
+          <Link href="/" aria-label="The Misty Copeland Foundation — home" onClick={toTop} className="justify-self-center">
             <Image
               src="/logo/logo-horizontal.png"
               alt="The Misty Copeland Foundation"
@@ -160,7 +166,7 @@ export default function Nav() {
 
         {/* ---------- MOBILE ---------- */}
         <div className="flex h-full items-center justify-between lg:hidden">
-          <Link href="/" aria-label="The Misty Copeland Foundation — home" className="relative z-10">
+          <Link href="/" aria-label="The Misty Copeland Foundation — home" onClick={toTop} className="relative z-10">
             <Image
               src={dark ? "/logo/logo-horizontal-white.png" : "/logo/logo-horizontal.png"}
               alt="The Misty Copeland Foundation"

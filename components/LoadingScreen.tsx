@@ -11,6 +11,12 @@ export default function LoadingScreen() {
   const [phase, setPhase] = useState<Phase>("draw");
 
   useEffect(() => {
+    // On a full load / refresh, start at the top (the hero) unless a hash is targeted.
+    try {
+      window.history.scrollRestoration = "manual";
+    } catch {}
+    if (!window.location.hash) window.scrollTo(0, 0);
+
     // Only on the first load of a session; respect reduced motion.
     const reduce = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
     if (sessionStorage.getItem("mcf_loaded") || reduce) {

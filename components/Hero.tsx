@@ -26,12 +26,10 @@ export default function Hero() {
   const [index, setIndex] = useState(0);
   const [attempts, setAttempts] = useState(0);
 
+  // Nudge playback without calling load() (load() resets the element and delays
+  // the first frame). autoPlay + the key remount already load each source.
   useEffect(() => {
-    const v = videoRef.current;
-    if (v) {
-      v.load();
-      v.play().catch(() => {});
-    }
+    videoRef.current?.play().catch(() => {});
   }, [index]);
 
   const next = () => {
@@ -48,6 +46,7 @@ export default function Hero() {
         autoPlay
         muted
         playsInline
+        preload="auto"
         poster="/video/misty1-poster.jpg"
         onEnded={next}
         onError={() => attempts < CLIPS.length && next()}
