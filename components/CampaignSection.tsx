@@ -56,24 +56,26 @@ export default function CampaignSection() {
           </p>
         </div>
 
-        {/* Progress card */}
-        <div className="rounded-2xl bg-cream/97 p-8 shadow-2xl backdrop-blur sm:p-10">
+        {/* Progress card — frosted glass on the purple section */}
+        <div className="rounded-2xl border border-cream/20 bg-cream/10 p-8 shadow-2xl backdrop-blur-md sm:p-10">
           <div className="flex items-end justify-between">
             <div>
-              <p className="kicker">Raised so far</p>
-              <p className="mt-2 font-serif text-4xl text-ink sm:text-5xl">{fmt(raised)}</p>
+              <p className="font-sans text-[11px] font-semibold uppercase tracking-[0.28em] text-cream/70">
+                Raised so far
+              </p>
+              <p className="mt-2 font-serif text-4xl text-cream sm:text-5xl">{fmt(raised)}</p>
             </div>
-            <p className="font-serif text-2xl text-muted">of {fmt(CAMPAIGN.goal)}</p>
+            <p className="font-serif text-2xl text-cream/70">of {fmt(CAMPAIGN.goal)}</p>
           </div>
 
-          <div className="mt-7 h-3 w-full overflow-hidden rounded-full bg-sand">
+          <div className="mt-7 h-3 w-full overflow-hidden rounded-full bg-cream/20">
             <div
-              className="h-full rounded-full bg-gradient-to-r from-purple to-red transition-[width] duration-[1600ms] ease-out"
+              className="h-full rounded-full bg-gradient-to-r from-gold to-red transition-[width] duration-[1600ms] ease-out"
               style={{ width: `${barPct}%` }}
             />
           </div>
-          <div className="mt-3 flex justify-between font-sans text-sm text-muted">
-            <span className="font-semibold text-purple">{pct}% funded</span>
+          <div className="mt-3 flex justify-between font-sans text-sm text-cream/70">
+            <span className="font-semibold text-gold">{pct}% funded</span>
             <span>Goal by {CAMPAIGN.deadlineLabel}</span>
           </div>
 
@@ -81,11 +83,11 @@ export default function CampaignSection() {
             href={DONATE_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-accent mt-8 w-full py-4 text-base"
+            className="btn mt-8 w-full bg-cream py-4 text-base text-ink hover:bg-gold"
           >
             Donate to the Campaign
           </a>
-          <p className="mt-4 text-center font-sans text-xs text-muted">
+          <p className="mt-4 text-center font-sans text-xs text-cream/60">
             Every gift is tax-deductible to the fullest extent of the law.
           </p>
         </div>
