@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --canvas: #faf7f1;
+  --ink: #1a1613;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  body {
+    background-color: var(--canvas);
+    color: var(--ink);
+    font-feature-settings: "kern", "liga", "onum";
+  }
+  ::selection {
+    background-color: #8651ed;
+    color: #fff;
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-playfair), Georgia, serif;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+}
+
+@layer components {
+  .container-content {
+    @apply mx-auto w-full max-w-content px-6 sm:px-8 lg:px-12;
+  }
+
+  /* Small uppercase eyebrow label */
+  .kicker {
+    @apply font-sans text-[11px] font-semibold uppercase tracking-[0.28em] text-muted;
+  }
+
+  /* Primary + secondary buttons */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full font-sans text-[13px] font-semibold tracking-[0.06em] transition-all duration-300 ease-out;
+  }
+  .btn-primary {
+    @apply btn bg-ink px-7 py-3.5 text-cream hover:bg-purple hover:shadow-[0_10px_30px_-8px_rgba(134,81,237,0.55)];
+  }
+  .btn-accent {
+    @apply btn bg-purple px-7 py-3.5 text-white hover:bg-indigo hover:shadow-[0_10px_30px_-8px_rgba(37,37,165,0.5)];
+  }
+  .btn-ghost {
+    @apply btn border border-ink/25 px-7 py-3.5 text-ink hover:border-ink hover:bg-ink hover:text-cream;
+  }
+  .btn-ghost-light {
+    @apply btn border border-white/40 px-7 py-3.5 text-white hover:bg-white hover:text-ink;
+  }
+
+  /* Animated underline link */
+  .link-underline {
+    @apply relative inline-block;
+  }
+  .link-underline::after {
+    content: "";
+    @apply absolute -bottom-0.5 left-0 h-px w-full origin-right scale-x-0 bg-current transition-transform duration-500 ease-out;
+  }
+  .link-underline:hover::after {
+    @apply origin-left scale-x-100;
+  }
+
+  .hairline {
+    @apply h-px w-full bg-ink/10;
+  }
+}
+
+/* Fine grain overlay for editorial texture (very subtle) */
+.grain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Pause marquee on hover of the gallery */
+.marquee-col {
+  will-change: transform;
+}
+.marquee-group:hover .marquee-col {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .marquee-col {
+    animation: none !important;
+  }
+  .animate-kenburns {
+    animation: none !important;
+  }
+}
