@@ -1,9 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import Link from "next/link";
 import { useInView } from "framer-motion";
-import { CAMPAIGN } from "@/lib/content";
+import { CAMPAIGN, DONATE_URL } from "@/lib/content";
 
 const fmt = (n: number) => `$${n.toLocaleString()}`;
 
@@ -78,9 +77,14 @@ export default function CampaignSection() {
             <span>Goal by {CAMPAIGN.deadlineLabel}</span>
           </div>
 
-          <Link href="/donate" className="btn-accent mt-8 w-full py-4 text-base">
+          <a
+            href={DONATE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-accent mt-8 w-full py-4 text-base"
+          >
             Donate to the Campaign
-          </Link>
+          </a>
           <p className="mt-4 text-center font-sans text-xs text-muted">
             Every gift is tax-deductible to the fullest extent of the law.
           </p>

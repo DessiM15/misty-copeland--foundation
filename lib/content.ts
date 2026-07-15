@@ -25,9 +25,8 @@ export const CONTACT = {
   phoneHref: "tel:+12128172350",
 };
 
-// TODO(client): swap "#" for the real donation platform URL once located
-// (e.g. Givebutter / Donorbox / Classy checkout link).
-export const DONATE_URL = "#donate-form";
+// The Foundation's live donation platform (NeonCRM).
+export const DONATE_URL = "https://mistycopelandfoundation.app.neoncrm.com/forms/donate";
 
 export const NAV = [
   { label: "About", href: "/#mission" },

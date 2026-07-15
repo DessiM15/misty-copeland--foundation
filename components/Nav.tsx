@@ -64,12 +64,14 @@ export default function Nav() {
               {item.label}
             </Link>
           ))}
-          <Link
-            href={DONATE_URL === "#donate-form" ? "/donate" : DONATE_URL}
+          <a
+            href={DONATE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="btn bg-purple px-6 py-3 text-white hover:bg-indigo"
           >
             Donate
-          </Link>
+          </a>
         </div>
 
         {/* Mobile toggle */}
@@ -120,13 +122,15 @@ export default function Nav() {
             </Link>
           ))}
         </div>
-        <Link
-          href="/donate"
+        <a
+          href={DONATE_URL}
+          target="_blank"
+          rel="noopener noreferrer"
           onClick={() => setOpen(false)}
           className="btn-accent mt-8 w-full py-4 text-base"
         >
           Donate
-        </Link>
+        </a>
       </div>
     </header>
   );

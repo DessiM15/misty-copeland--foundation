@@ -1,6 +1,5 @@
-import Link from "next/link";
 import Reveal from "@/components/Reveal";
-import { GIVING_TIERS } from "@/lib/content";
+import { GIVING_TIERS, DONATE_URL } from "@/lib/content";
 
 export default function GivingCircles() {
   return (
@@ -45,9 +44,11 @@ export default function GivingCircles() {
 
                 <div className="mt-6 flex flex-wrap gap-2">
                   {tier.amounts.map((amt) => (
-                    <Link
+                    <a
                       key={amt}
-                      href="/donate"
+                      href={DONATE_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className={`rounded-full px-4 py-2 font-sans text-sm font-semibold transition-colors ${
                         tier.featured
                           ? "bg-white/15 text-white hover:bg-white hover:text-purple"
@@ -55,7 +56,7 @@ export default function GivingCircles() {
                       }`}
                     >
                       ${amt.toLocaleString()}
-                    </Link>
+                    </a>
                   ))}
                 </div>
               </div>
@@ -64,9 +65,14 @@ export default function GivingCircles() {
         </div>
 
         <div className="mt-12 text-center">
-          <Link href="/donate" className="btn-primary px-9 py-4 text-base">
+          <a
+            href={DONATE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary px-9 py-4 text-base"
+          >
             Make a Gift
-          </Link>
+          </a>
         </div>
       </div>
     </section>
