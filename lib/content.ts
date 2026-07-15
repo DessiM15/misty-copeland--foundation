@@ -62,46 +62,97 @@ export const CAMPAIGN = {
 };
 
 // ---------------------------------------------------------------------------
-// Programs
+// Programs — each themed in its own brand accent color (page 6 palette)
 // ---------------------------------------------------------------------------
-export const PROGRAMS = [
+export type Program = {
+  slug: string;
+  name: string;
+  kicker: string;
+  color: string;
+  colorName: string;
+  image: string;
+  tagline: string;
+  summary: string;
+  detail: string;
+  pillars: { title: string; text: string }[];
+};
+
+export const PROGRAMS: Program[] = [
   {
-    id: "be-bold",
+    slug: "be-bold",
     name: "BE BOLD",
-    kicker: "Ages 8–10",
+    kicker: "Ages 8–10 · Our flagship",
+    color: "#8651ED",
+    colorName: "purple",
+    image: "/gallery/g12.jpg",
+    tagline: "Where a lifetime of dance begins.",
     summary:
       "Our flagship program brings free, high-quality ballet instruction to children in under-resourced communities — engaging their bodies, hearts and minds through the joy of dance.",
     detail:
       "Delivered in partnership with schools and community organizations, BE BOLD introduces young people to ballet in a nurturing, affirming environment led by professional teaching artists who reflect the students they serve.",
+    pillars: [
+      { title: "Free, always", text: "High-quality ballet instruction at no cost to families, delivered right in their own communities." },
+      { title: "Representation matters", text: "Taught by professional artists who reflect the children they serve — so every student sees themselves in ballet." },
+      { title: "Body, heart & mind", text: "More than steps: BE BOLD builds confidence, discipline and joy that reach far beyond the studio." },
+    ],
   },
   {
-    id: "be-bold-next-steps",
+    slug: "next-steps",
     name: "BE BOLD: Next Steps",
     kicker: "Continuing dancers",
+    color: "#2525A5",
+    colorName: "indigo",
+    image: "/gallery/g6.jpg",
+    tagline: "The door stays open.",
     summary:
       "A pathway for students ready to go further — continued training, mentorship and performance opportunities for dancers who want to grow.",
     detail:
       "Next Steps deepens technique and artistry while surrounding students with mentors and role models, keeping the door to ballet open long after a first plié.",
+    pillars: [
+      { title: "Deeper training", text: "More advanced instruction for students ready to grow their technique and artistry." },
+      { title: "Mentorship", text: "Role models who guide young dancers as they discover how far they can go." },
+      { title: "The stage", text: "Performance opportunities that turn practice into pride." },
+    ],
   },
   {
-    id: "be-bolder",
+    slug: "be-bolder",
     name: "BE BOLDER",
     kicker: "Across generations",
+    color: "#D92C23",
+    colorName: "red",
+    image: "/gallery/g20.jpg",
+    tagline: "Dance has no age limit.",
     summary:
       "Ballet is for every body and every age. BE BOLDER expands the joy and wellness of dance to older adults across our communities.",
     detail:
       "Created in partnership with community elders, BE BOLDER celebrates lifelong movement — proving that the beauty and power of dance belongs to us at every stage of life.",
+    pillars: [
+      { title: "For every generation", text: "Bringing the joy and wellness of ballet to older adults across our communities." },
+      { title: "Movement as medicine", text: "Dance supports balance, strength, memory and connection at every stage of life." },
+      { title: "Community", text: "Created with community elders — the beauty and power of dance belongs to us all." },
+    ],
   },
   {
-    id: "teaching-artists",
+    slug: "teaching-artists",
     name: "Teaching Artists",
     kicker: "Our educators",
+    color: "#EEC65E",
+    colorName: "gold",
+    image: "/gallery/g13.jpg",
+    tagline: "The heart of the Foundation.",
     summary:
       "Professional dancers and educators who bring expertise, warmth and representation into every classroom.",
     detail:
       "Our teaching artists are the heart of the Foundation — mentors who show every child that the world of ballet has a place for them.",
+    pillars: [
+      { title: "Professional artists", text: "Working dancers and educators who bring real expertise into every classroom." },
+      { title: "Warmth & care", text: "Mentors who create nurturing, affirming spaces where children thrive." },
+      { title: "Representation", text: "Educators who show every student that ballet has a place for them." },
+    ],
   },
 ];
+
+export const getProgram = (slug: string) => PROGRAMS.find((p) => p.slug === slug);
 
 // ---------------------------------------------------------------------------
 // Giving circles (exact tiers from the Foundation)

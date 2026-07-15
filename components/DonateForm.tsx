@@ -13,7 +13,7 @@ export default function DonateForm() {
   const effective = custom ? parseInt(custom.replace(/[^\d]/g, ""), 10) || 0 : amount;
 
   return (
-    <div id="donate-form" className="scroll-mt-28 rounded-2xl border border-ink/10 bg-white p-7 shadow-xl sm:p-9">
+    <div id="donate-form" className="scroll-mt-28 rounded-2xl border border-ink/10 bg-cream p-7 shadow-xl sm:p-9">
       <h2 className="font-serif text-3xl text-ink">Make your gift</h2>
       <p className="mt-2 font-body text-sm text-ink/60">
         100% tax-deductible. Cancel a recurring gift anytime.

@@ -30,7 +30,7 @@ function Column({ images, dir, duration, hideBelowMd }: { images: string[]; dir:
 
 export default function InstagramGallery() {
   return (
-    <section className="relative overflow-hidden bg-ink py-20 sm:py-28">
+    <section className="relative overflow-hidden bg-noir py-20 sm:py-28">
       <div className="container-content">
         <div className="mb-12 flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
           <div>
@@ -61,8 +61,8 @@ export default function InstagramGallery() {
           <Column images={columns[3]} dir={directions[3]} duration={durations[3]} hideBelowMd />
         </div>
         {/* Fade masks top & bottom */}
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-ink to-transparent" />
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-ink to-transparent" />
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-noir to-transparent" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-noir to-transparent" />
       </div>
     </section>
   );

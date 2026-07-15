@@ -57,7 +57,7 @@ export default function CampaignSection() {
         </div>
 
         {/* Progress card */}
-        <div className="rounded-2xl bg-white/95 p-8 shadow-2xl backdrop-blur sm:p-10">
+        <div className="rounded-2xl bg-cream/97 p-8 shadow-2xl backdrop-blur sm:p-10">
           <div className="flex items-end justify-between">
             <div>
               <p className="kicker">Raised so far</p>

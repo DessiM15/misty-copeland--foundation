@@ -93,6 +93,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Nav />
         <main>{children}</main>
         <Footer />
+        <div className="film-grain" aria-hidden="true" />
       </body>
     </html>
   );
