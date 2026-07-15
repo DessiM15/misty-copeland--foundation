@@ -4,6 +4,7 @@ import "./globals.css";
 import { SITE } from "@/lib/content";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import LoadingScreen from "@/components/LoadingScreen";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -90,6 +91,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
         />
+        <LoadingScreen />
         <Nav />
         <main>{children}</main>
         <Footer />
